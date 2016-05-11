@@ -1,0 +1,15 @@
+createvis:
+warnings
+civil penalties
+
+use vis for:
+toggle on/of
+zoom
+search address
+
+
+createlayer from geojson sql query that has where selecting census tract
+
+create layer using in state that census tract is in as where
+
+use turf to go through points in this subset

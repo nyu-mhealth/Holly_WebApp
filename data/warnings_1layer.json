@@ -1,0 +1,228 @@
+{
+  "id": "5afa226e-0019-11e6-b597-0ea31932ec1d",
+  "version": "0.1.0",
+  "title": "warnings_dc _1layer",
+  "likes": 0,
+  "description": null,
+  "scrollwheel": false,
+  "legends": true,
+  "url": null,
+  "map_provider": "leaflet",
+  "bounds": [
+    [
+      38.82713798441491,
+      -77.13878631591797
+    ],
+    [
+      38.94232097947902,
+      -76.69933319091797
+    ]
+  ],
+  "center": "[38.88475282438953, -76.91905975341797]",
+  "zoom": 12,
+  "updated_at": "2016-04-11T19:12:38+00:00",
+  "layers": [
+    {
+      "options": {
+        "default": "true",
+        "url": "http://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}.png",
+        "subdomains": "abcd",
+        "minZoom": "0",
+        "maxZoom": "18",
+        "name": "Positron",
+        "className": "positron_rainbow_labels",
+        "attribution": "&copy; <a href=\"http://www.openstreetmap.org/copyright\">OpenStreetMap</a> contributors &copy; <a href=\"http://cartodb.com/attributions\">CartoDB</a>",
+        "labels": {
+          "url": "http://{s}.basemaps.cartocdn.com/light_only_labels/{z}/{x}/{y}.png"
+        },
+        "urlTemplate": "http://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}.png"
+      },
+      "infowindow": null,
+      "tooltip": null,
+      "id": "2db7b072-e0e1-4227-8a71-a9e0aa3a7de8",
+      "order": 0,
+      "type": "tiled"
+    },
+    {
+      "type": "namedmap",
+      "order": 1,
+      "options": {
+        "type": "namedmap",
+        "user_name": "legacy",
+        "maps_api_template": "https://{user}.cartodb.com:443",
+        "sql_api_template": "https://{user}.cartodb.com:443",
+        "tiler_protocol": "http",
+        "tiler_domain": "cartodb.com",
+        "tiler_port": "80",
+        "filter": "mapnik",
+        "named_map": {
+          "name": "tpl_5afa226e_0019_11e6_b597_0ea31932ec1d",
+          "stat_tag": "5afa226e-0019-11e6-b597-0ea31932ec1d",
+          "params": {
+            "layer0": 1
+          },
+          "layers": [
+            {
+              "id": "4f766aec-dd1a-4e60-b881-341b77012b93",
+              "layer_name": "allwarnings_dc",
+              "interactivity": "cartodb_id,rawretailername,fulladdress,inspectiondate,warningurl",
+              "visible": true,
+              "infowindow": {
+                "fields": [
+                  {
+                    "name": "rawretailername",
+                    "title": false,
+                    "position": 0
+                  },
+                  {
+                    "name": "fulladdress",
+                    "title": false,
+                    "position": 5
+                  },
+                  {
+                    "name": "inspectiondate",
+                    "title": true,
+                    "position": 6
+                  },
+                  {
+                    "name": "warningurl",
+                    "title": true,
+                    "position": 26
+                  }
+                ],
+                "template_name": "table/views/infowindow_light",
+                "template": "<div class=\"cartodb-popup v2\">\n  <a href=\"#close\" class=\"cartodb-popup-close-button close\">x</a>\n  <div class=\"cartodb-popup-content-wrapper\">\n    <div class=\"cartodb-popup-content\">\n      {{#content.fields}}\n        {{#title}}<h4>{{title}}</h4>{{/title}}\n        {{#value}}\n          <p {{#type}}class=\"{{ type }}\"{{/type}}>{{{ value }}}</p>\n        {{/value}}\n        {{^value}}\n          <p class=\"empty\">null</p>\n        {{/value}}\n      {{/content.fields}}\n    </div>\n  </div>\n  <div class=\"cartodb-popup-tip-container\"></div>\n</div>\n",
+                "alternative_names": {},
+                "width": 226,
+                "maxHeight": 180
+              },
+              "tooltip": {
+                "fields": [
+                  {
+                    "name": "rawretailername",
+                    "title": false,
+                    "position": 0
+                  },
+                  {
+                    "name": "fulladdress",
+                    "title": false,
+                    "position": 5
+                  },
+                  {
+                    "name": "inspectiondate",
+                    "title": true,
+                    "position": 6
+                  },
+                  {
+                    "name": "warningurl",
+                    "title": true,
+                    "position": 26
+                  }
+                ],
+                "template_name": "tooltip_light",
+                "template": "<div class=\"cartodb-tooltip-content-wrapper\">\n  <div class=\"cartodb-tooltip-content\">\n  {{#fields}}\n    {{#title}}\n    <h4>{{title}}</h4>\n    {{/title}}\n    <p>{{{ value }}}</p>\n  {{/fields}}\n  </div>\n</div>",
+                "alternative_names": {},
+                "maxHeight": 180
+              },
+              "legend": {
+                "type": "category",
+                "show_title": true,
+                "title": "",
+                "template": "",
+                "visible": true,
+                "items": [
+                  {
+                    "name": "Civil Money Penalty",
+                    "visible": true,
+                    "value": "#B40903"
+                  },
+                  {
+                    "name": "Warning Letter",
+                    "visible": true,
+                    "value": "#FFCC00"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "attribution": ""
+      }
+    },
+    {
+      "options": {
+        "default": "true",
+        "url": "http://{s}.basemaps.cartocdn.com/light_only_labels/{z}/{x}/{y}.png",
+        "subdomains": "abcd",
+        "minZoom": "0",
+        "maxZoom": "18",
+        "attribution": "&copy; <a href=\"http://www.openstreetmap.org/copyright\">OpenStreetMap</a> contributors &copy; <a href=\"http://cartodb.com/attributions\">CartoDB</a>",
+        "urlTemplate": "http://{s}.basemaps.cartocdn.com/light_only_labels/{z}/{x}/{y}.png",
+        "type": "Tiled",
+        "name": "Positron Labels"
+      },
+      "infowindow": null,
+      "tooltip": null,
+      "id": "2a8fc12c-3192-4963-8750-cf986aee5b84",
+      "order": 2,
+      "type": "tiled"
+    }
+  ],
+  "overlays": [
+    {
+      "type": "share",
+      "order": 2,
+      "options": {
+        "display": true,
+        "x": 20,
+        "y": 20
+      },
+      "template": ""
+    },
+    {
+      "type": "search",
+      "order": 3,
+      "options": {
+        "display": true,
+        "x": 60,
+        "y": 20
+      },
+      "template": ""
+    },
+    {
+      "type": "zoom",
+      "order": 6,
+      "options": {
+        "display": true,
+        "x": 20,
+        "y": 20
+      },
+      "template": "<a href=\"#zoom_in\" class=\"zoom_in\">+</a> <a href=\"#zoom_out\" class=\"zoom_out\">-</a>"
+    },
+    {
+      "type": "loader",
+      "order": 8,
+      "options": {
+        "display": true,
+        "x": 20,
+        "y": 150
+      },
+      "template": "<div class=\"loader\" original-title=\"\"></div>"
+    },
+    {
+      "type": "logo",
+      "order": 9,
+      "options": {
+        "display": true,
+        "x": 10,
+        "y": 40
+      },
+      "template": ""
+    }
+  ],
+  "prev": null,
+  "next": null,
+  "transition_options": {
+    "time": 0
+  }
+}

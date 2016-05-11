@@ -1,0 +1,407 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "data/warnings_1layer.json",
+			"settings":
+			{
+				"buffer_size": 7176,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 87.0,
+		"last_filter": "git push",
+		"selected_items":
+		[
+			[
+				"git push",
+				"Git: Push Current Branch"
+			],
+			[
+				"git qu",
+				"Git: Quick Commit"
+			],
+			[
+				"jaca",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"git push ",
+				"Git: Push"
+			],
+			[
+				"git qui",
+				"Git: Quick Commit"
+			],
+			[
+				"git push cu",
+				"Git: Push Current Branch"
+			],
+			[
+				"git commit ",
+				"Git: Quick Commit"
+			],
+			[
+				"git statu",
+				"Git: Status"
+			],
+			[
+				"git push c",
+				"Git: Push Current Branch"
+			],
+			[
+				"git commit",
+				"Git: Quick Commit"
+			],
+			[
+				"git add",
+				"Git: Add All"
+			],
+			[
+				"git stat",
+				"Git: Status"
+			],
+			[
+				"git a",
+				"Git: Add Current File"
+			],
+			[
+				"PRETT",
+				"Pretty JSON: Format (Pretty Print) JSON"
+			],
+			[
+				"J",
+				"Set Syntax: JSON"
+			],
+			[
+				"json",
+				"Pretty JSON: Format (Pretty Print) JSON"
+			],
+			[
+				"js",
+				"Set Syntax: JSON"
+			],
+			[
+				"pretty",
+				"Pretty JSON: Format (Pretty Print) JSON"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"git pu",
+				"Git: Push Current Branch"
+			],
+			[
+				"git pull",
+				"Git: Pull Current Branch"
+			],
+			[
+				"git pus",
+				"Git: Push"
+			],
+			[
+				"git ",
+				"Git: Push"
+			],
+			[
+				"git add c",
+				"Git: Add Current File"
+			],
+			[
+				"git status",
+				"Git: Status"
+			],
+			[
+				"GIT CO",
+				"Git: Quick Commit"
+			],
+			[
+				"comment",
+				"Toggle Comment"
+			],
+			[
+				"git ad",
+				"Git: Add Current File"
+			],
+			[
+				"git commi",
+				"Git: Commit"
+			],
+			[
+				"git bran",
+				"Git: Change Branch"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"jq",
+				"Pretty JSON: JSON query with ./jq"
+			],
+			[
+				"inst	",
+				"Package Control: Install Package"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 467.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/hollyorr/Desktop/nyumhealth_git/FDA-WebApp-Code/js/mapStyles.js",
+		"/Users/hollyorr/Desktop/nyumhealth_git/FDA-WebApp-Code/js/main.js",
+		"/Users/hollyorr/Desktop/nyumhealth_git/FDA-WebApp-Code/FDA.sublime-project",
+		"/Users/hollyorr/Desktop/nyumhealth_git/FDA-WebApp-Code/js/intro.js",
+		"/Users/hollyorr/Desktop/nyumhealth_git/FDA-WebApp-Code/index_orig.html",
+		"/Users/hollyorr/Desktop/nyumhealth_git/FDA-WebApp-Code/js/warnings_2layers.json",
+		"/Users/hollyorr/Desktop/nyumhealth_git/FDA-WebApp-Code/js/warnings_1layer.json",
+		"/Users/hollyorr/Desktop/nyumhealth_git/FDA-WebApp-Code/index.html",
+		"/Users/hollyorr/Desktop/nyumhealth_git/FDA-WebApp-Code/README.md",
+		"/Users/hollyorr/Desktop/nyumhealth_git/BushwickCommunityMap/js/cartodb.js",
+		"/Users/hollyorr/Desktop/DNA/DNA_Test.geojson.json"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+			"/Users/hollyorr/Desktop/nyumhealth_git/FDA-WebApp-Code",
+			"/Users/hollyorr/Desktop/nyumhealth_git/BushwickCommunityMap"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"sql",
+			"us_counties",
+			"type",
+			"warningpts",
+			"taxLotActions",
+			"landuse",
+			"taxLotactions",
+			"function",
+			"fuuction",
+			"layer",
+			"taxLotActions",
+			"warningpts",
+			"taxLots",
+			"layer_name",
+			"all",
+			"taxLots",
+			"taxlotactions",
+			"taxlots",
+			"availfar",
+			"button",
+			"initCheckboxes",
+			"app",
+			"bushwick",
+			"bush",
+			"window.onload",
+			"layers",
+			"counties",
+			"layergroup",
+			"templateSettings",
+			"cdbURL",
+			"HOLLY",
+			"createvis",
+			"google",
+			"https",
+			" <div id=\"mapid\"></div>",
+			"src",
+			".ready",
+			".noConflict",
+			"jquery",
+			"<script src=",
+			"import"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"warningpts"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": false,
+		"whole_word": true,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "data/warnings_1layer.json",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 7176,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2045,
+								2048
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 911.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 100.0
+	},
+	"output.find_results":
+	{
+		"height": 120.0
+	},
+	"output.git":
+	{
+		"height": 100.0
+	},
+	"pinned_build_system": "",
+	"project": "FDA.sublime-project",
+	"replace":
+	{
+		"height": 42.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"README.md"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 293.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

@@ -1,0 +1,281 @@
+{
+  "id": "b00cba44-0016-11e6-a641-0ecd1babdde5",
+  "version": "0.1.0",
+  "title": "warnings_dc_2layers",
+  "likes": 0,
+  "description": null,
+  "scrollwheel": false,
+  "legends": true,
+  "url": null,
+  "map_provider": "leaflet",
+  "bounds": [
+    [
+      38.840509854931064,
+      -77.10136413574217
+    ],
+    [
+      38.955671185389015,
+      -76.66191101074219
+    ]
+  ],
+  "center": "[38.8981138649599, -76.88163757324219]",
+  "zoom": 13,
+  "updated_at": "2016-04-11T19:03:55+00:00",
+  "layers": [
+    {
+      "options": {
+        "visible": true,
+        "type": "Tiled",
+        "default": "true",
+        "url": "http://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}.png",
+        "subdomains": "abcd",
+        "minZoom": "0",
+        "maxZoom": "18",
+        "name": "Positron",
+        "className": "httpsbasemapscartocdncomlight_nolabelszxypng",
+        "attribution": "&copy; <a href=\"http://www.openstreetmap.org/copyright\">OpenStreetMap</a> contributors &copy; <a href=\"http://cartodb.com/attributions\">CartoDB</a>",
+        "labels": {
+          "url": "http://{s}.basemaps.cartocdn.com/light_only_labels/{z}/{x}/{y}.png"
+        },
+        "urlTemplate": "http://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}.png",
+        "id": "55e38398-9844-4854-994a-7b02fcaec25e",
+        "order": 0
+      },
+      "infowindow": null,
+      "tooltip": null,
+      "id": "55e38398-9844-4854-994a-7b02fcaec25e",
+      "order": 0,
+      "type": "tiled"
+    },
+    {
+      "type": "namedmap",
+      "order": 1,
+      "options": {
+        "type": "namedmap",
+        "user_name": "legacy",
+        "maps_api_template": "https://{user}.cartodb.com:443",
+        "sql_api_template": "https://{user}.cartodb.com:443",
+        "tiler_protocol": "http",
+        "tiler_domain": "cartodb.com",
+        "tiler_port": "80",
+        "filter": "mapnik",
+        "named_map": {
+          "name": "tpl_b00cba44_0016_11e6_a641_0ecd1babdde5",
+          "stat_tag": "b00cba44-0016-11e6-a641-0ecd1babdde5",
+          "params": {
+            "layer0": 1,
+            "layer1": 1
+          },
+          "layers": [
+            {
+              "id": "671d27f3-ae52-4300-ba02-10c2ab00067c",
+              "layer_name": "warnings_dc",
+              "interactivity": "cartodb_id,rawretailername",
+              "visible": true,
+              "infowindow": {
+                "fields": [
+                  {
+                    "name": "rawretailername",
+                    "title": false,
+                    "position": 0
+                  },
+                  {
+                    "name": "fulladdress",
+                    "title": false,
+                    "position": 5
+                  },
+                  {
+                    "name": "inspectiondate",
+                    "title": false,
+                    "position": 6
+                  },
+                  {
+                    "name": "warningurl",
+                    "title": false,
+                    "position": 26
+                  }
+                ],
+                "template_name": "table/views/infowindow_light",
+                "template": "<div class=\"cartodb-popup v2\">\n  <a href=\"#close\" class=\"cartodb-popup-close-button close\">x</a>\n  <div class=\"cartodb-popup-content-wrapper\">\n    <div class=\"cartodb-popup-content\">\n      {{#content.fields}}\n        {{#title}}<h4>{{title}}</h4>{{/title}}\n        {{#value}}\n          <p {{#type}}class=\"{{ type }}\"{{/type}}>{{{ value }}}</p>\n        {{/value}}\n        {{^value}}\n          <p class=\"empty\">null</p>\n        {{/value}}\n      {{/content.fields}}\n    </div>\n  </div>\n  <div class=\"cartodb-popup-tip-container\"></div>\n</div>\n",
+                "alternative_names": {},
+                "width": 226,
+                "maxHeight": 180
+              },
+              "tooltip": {
+                "fields": [
+                  {
+                    "name": "rawretailername",
+                    "title": false,
+                    "position": 0
+                  }
+                ],
+                "template_name": "tooltip_light",
+                "template": "<div class=\"cartodb-tooltip-content-wrapper\">\n  <div class=\"cartodb-tooltip-content\">\n  {{#fields}}\n    {{#title}}\n    <h4>{{title}}</h4>\n    {{/title}}\n    <p>{{{ value }}}</p>\n  {{/fields}}\n  </div>\n</div>",
+                "alternative_names": {},
+                "maxHeight": 180
+              },
+              "legend": {
+                "type": "custom",
+                "show_title": false,
+                "title": "",
+                "template": "",
+                "visible": true,
+                "items": [
+                  {
+                    "name": "FDA Warning Letters",
+                    "visible": true,
+                    "value": "#fd8d3c",
+                    "sync": true
+                  }
+                ]
+              }
+            },
+            {
+              "id": "866d350e-5d1b-4a78-901d-4977cdf52820",
+              "layer_name": "cmp_dc",
+              "interactivity": "cartodb_id,rawretailername",
+              "visible": true,
+              "infowindow": {
+                "fields": [
+                  {
+                    "name": "rawretailername",
+                    "title": false,
+                    "position": 0
+                  },
+                  {
+                    "name": "fulladdress",
+                    "title": false,
+                    "position": 5
+                  },
+                  {
+                    "name": "inspectiondate",
+                    "title": false,
+                    "position": 6
+                  },
+                  {
+                    "name": "warningurl",
+                    "title": false,
+                    "position": 26
+                  }
+                ],
+                "template_name": "table/views/infowindow_light",
+                "template": "<div class=\"cartodb-popup v2\">\n  <a href=\"#close\" class=\"cartodb-popup-close-button close\">x</a>\n  <div class=\"cartodb-popup-content-wrapper\">\n    <div class=\"cartodb-popup-content\">\n      {{#content.fields}}\n        {{#title}}<h4>{{title}}</h4>{{/title}}\n        {{#value}}\n          <p {{#type}}class=\"{{ type }}\"{{/type}}>{{{ value }}}</p>\n        {{/value}}\n        {{^value}}\n          <p class=\"empty\">null</p>\n        {{/value}}\n      {{/content.fields}}\n    </div>\n  </div>\n  <div class=\"cartodb-popup-tip-container\"></div>\n</div>\n",
+                "alternative_names": {},
+                "width": 226,
+                "maxHeight": 180
+              },
+              "tooltip": {
+                "fields": [
+                  {
+                    "name": "rawretailername",
+                    "title": false,
+                    "position": 0
+                  }
+                ],
+                "template_name": "tooltip_light",
+                "template": "<div class=\"cartodb-tooltip-content-wrapper\">\n  <div class=\"cartodb-tooltip-content\">\n  {{#fields}}\n    {{#title}}\n    <h4>{{title}}</h4>\n    {{/title}}\n    <p>{{{ value }}}</p>\n  {{/fields}}\n  </div>\n</div>",
+                "alternative_names": {},
+                "maxHeight": 180
+              },
+              "legend": {
+                "type": "custom",
+                "show_title": false,
+                "title": "",
+                "template": "",
+                "visible": true,
+                "items": [
+                  {
+                    "name": "Civil Money Penalty",
+                    "visible": true,
+                    "value": "#850200",
+                    "sync": true
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "attribution": ""
+      }
+    },
+    {
+      "options": {
+        "visible": true,
+        "type": "Tiled",
+        "default": "true",
+        "url": "http://{s}.basemaps.cartocdn.com/light_only_labels/{z}/{x}/{y}.png",
+        "subdomains": "abcd",
+        "minZoom": "0",
+        "maxZoom": "18",
+        "attribution": "&copy; <a href=\"http://www.openstreetmap.org/copyright\">OpenStreetMap</a> contributors &copy; <a href=\"http://cartodb.com/attributions\">CartoDB</a>",
+        "urlTemplate": "http://{s}.basemaps.cartocdn.com/light_only_labels/{z}/{x}/{y}.png",
+        "name": "Positron Labels",
+        "id": "110b5b2e-da40-4c6e-8a53-23f373787aa7",
+        "className": "httpsbasemapscartocdncomlight_only_labelszxypng",
+        "order": 3
+      },
+      "infowindow": null,
+      "tooltip": null,
+      "id": "110b5b2e-da40-4c6e-8a53-23f373787aa7",
+      "order": 3,
+      "type": "tiled"
+    }
+  ],
+  "overlays": [
+    {
+      "type": "share",
+      "order": 2,
+      "options": {
+        "display": true,
+        "x": 20,
+        "y": 20
+      },
+      "template": ""
+    },
+    {
+      "type": "search",
+      "order": 3,
+      "options": {
+        "display": true,
+        "x": 60,
+        "y": 20
+      },
+      "template": ""
+    },
+    {
+      "type": "zoom",
+      "order": 6,
+      "options": {
+        "display": true,
+        "x": 20,
+        "y": 20
+      },
+      "template": "<a href=\"#zoom_in\" class=\"zoom_in\">+</a> <a href=\"#zoom_out\" class=\"zoom_out\">-</a>"
+    },
+    {
+      "type": "loader",
+      "order": 8,
+      "options": {
+        "display": true,
+        "x": 20,
+        "y": 150
+      },
+      "template": "<div class=\"loader\" original-title=\"\"></div>"
+    },
+    {
+      "type": "logo",
+      "order": 9,
+      "options": {
+        "display": true,
+        "x": 10,
+        "y": 40
+      },
+      "template": ""
+    }
+  ],
+  "prev": null,
+  "next": null,
+  "transition_options": {
+    "time": 0
+  }
+}
