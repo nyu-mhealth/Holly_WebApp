@@ -1,4 +1,4 @@
-# FDA-WebApp
+# NYU-FDA-WebApp
 Documentation for Development of mapping web portal for FDA inspection data.
 
 Recreate functionality in Andrew's app: http://gis.truthinitiative.org/tobaccoviewer/   
