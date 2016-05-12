@@ -67,7 +67,6 @@ app.map = (function(w,d, $, _){
     adultRates: "SELECT * FROM adult_smoking",
   };
 
-  //HOLLY - research legend templates
   // compile the underscore legend template for rendering map legends for choropleth layers
   _.templateSettings.variable = "legend";
   el.template = _.template($("script.template").html());
@@ -85,7 +84,7 @@ app.map = (function(w,d, $, _){
   var initMap = function() {
     // map paramaters to pass to Leaflet
     var params = {
-      center : [35.816408,-78.638223], //DC
+      center : [35.816408,-78.638223], //Raleigh
       //minZoom : 14,
       //maxZoom : 19,
       zoom : 6,
@@ -110,18 +109,16 @@ app.map = (function(w,d, $, _){
     // instantiate the Leaflet map object
     el.map = new L.map('map', params);
     
-    // api key for mapbox tiles - HOLLY GET OWN TOKEN
-    // L.mapbox.accessToken = 'pk.eyJ1IjoiY2hlbnJpY2siLCJhIjoiLVhZMUZZZyJ9.HcNi26J3P-MiOmBKYHIbxw';
+    // api key for mapbox tiles 
     L.mapbox.accessToken = 'pk.eyJ1Ijoibnl1bWhlYWx0aCIsImEiOiJjaW5xMXU5d2IxMDlldWdseW9zbXl3dG94In0.pC5lMAc_tKvgtUcHquXuwg';
 
-    // tileLayer for mapbox basemap - HOLLY RESEARCH TILE CREATION
+    // tileLayer for mapbox basemap
     el.mapboxTiles = L.mapbox.tileLayer('chenrick.map-3gzk4pem');
     el.map.addLayer(el.mapboxTiles); 
 
     // add mapbox and osm attribution
     var attr = "<a href='https://www.mapbox.com/about/maps/' target='_blank'>&copy; Mapbox &copy; OpenStreetMap</a>"
     el.map.attributionControl.addAttribution(attr);
-
 
     // feature groups to store geoJSON
     el.featureGroupSynar = L.featureGroup().addTo(el.map); 
@@ -217,7 +214,7 @@ app.map = (function(w,d, $, _){
 // END FOR JUST SYNAR*************************************************
 
 
-// GEOJSON load the geoJSON boundary FDA Contracts*******************************
+// Load the geoJSON boundary FDA Contracts*******************************
   function loadContracts() {
     $.getJSON('./data/fda_state_contracts.geojson', function(json, textStatus) {  
         el.contractsPoly = L.geoJson(json, {
@@ -263,7 +260,7 @@ app.map = (function(w,d, $, _){
      
 // END FOR JUST CONTRACTS*************************************************
 
-// Smokefree GEOJSON load the geoJSON **************************************** 
+// Smokefree load the geoJSON **************************************** 
   function loadSmokefree() {
     $.getJSON('./data/smokefree_indoor_laws.geojson', function(json, textStatus) {  
         el.smokefreePoly = L.geoJson(json, {
@@ -310,7 +307,7 @@ app.map = (function(w,d, $, _){
      
 // END FOR SMOKESFREE*************************************************
 
-// EXCISE TAX GEOJSON load the geoJSON*********************************** 
+// EXCISE TAX load the geoJSON*********************************** 
   function loadTax() {
     $.getJSON('./data/cigarette_excise_tax.geojson ', function(json, textStatus) {  
         el.taxPoly = L.geoJson(json, {
@@ -358,7 +355,7 @@ app.map = (function(w,d, $, _){
      
 // END FOR EXCISE TAX*************************************************
 
-// YOUTH SMOKING GEOJSON load the geoJSON*********************************** 
+// YOUTH SMOKING load the geoJSON*********************************** 
   function loadYouth() {
     $.getJSON('./data/youth_smoking.geojson', function(json, textStatus) {  
         el.youthPoly = L.geoJson(json, {
@@ -466,7 +463,6 @@ app.map = (function(w,d, $, _){
       }
     }
 
-
     function zoomToFeature(e) {
       el.map.fitBounds(e.target.getBounds());
     }
@@ -493,7 +489,6 @@ app.map = (function(w,d, $, _){
         layer.getSubLayer(0).setSQL(el.sql.warningLetters);
         el.fdaWarnings = layer.getSubLayer(0); 
         //store graduated circle version of warnings'
-
 
         // positions the tool tip in relationship to user's mouse
         // offset it by 5px vertically and horizontally so the mouse arrow won't cover it
@@ -544,7 +539,7 @@ app.map = (function(w,d, $, _){
       renderLegend(el.legendData.synarRates);
       return true;
     },
-      nb : function() {
+      contracts_checkbox : function() {
       renderLegend(el.legendData.fdaContracts);
       return true;
     },
@@ -578,23 +573,23 @@ app.map = (function(w,d, $, _){
     }); 
   }
 
-  // HOLLY - FOR EXTRA LAYERS toggle additional layers based on check box boolean value
+  // FOR Choropleth LAYERS toggle additional layers based on check box boolean value
   var initCheckboxes = function() {
     // checkboxes for dob permit layer & stories
     var checkboxDOB = $('input.dob:checkbox'),
-          $nb = $('#nb'),
+          $fc = $('#contracts_checkbox'),
           $sg = $('#synar_checkbox'),
           $sf = $('#smokefree_checkbox');
           $tx = $('#tax_checkbox');
           $ys = $('#youth_checkbox');
           $as = $('#adult_checkbox');
 
-    // HOLLY THIS IS FOR FDA TEST toggle NB new buildings layer
-    $nb.change(function(){
-      if ($nb.is(':checked')){
+    //toggle FDA Contracts layer
+    $fc.change(function(){
+      if ($fc.is(':checked')){
         // el.fdaContracts.show();
         el.featureGroupContracts.addLayer(el.contractsPoly);
-        el.fdaWarningsActions['nb']();           
+        el.fdaWarningsActions['contracts_checkbox']();           
       } else {
         // el.fdaContracts.hide();
         el.featureGroupContracts.removeLayer(el.contractsPoly);
@@ -602,7 +597,7 @@ app.map = (function(w,d, $, _){
       };
     });
 
-    //HOLLY - toggle SYNAR GEOJSON
+    //toggle SYNAR layer
     $sg.change(function(){
       if ($sg.is(':checked')) {
         el.featureGroupSynar.addLayer(el.synarPoly);
@@ -613,7 +608,7 @@ app.map = (function(w,d, $, _){
       };
     }); 
 
-    //HOLLY - toggle smokefree GEOJSON
+    //toggle smokefree layer
     $sf.change(function(){
       if ($sf.is(':checked')) {
         el.featureGroupSmokefree.addLayer(el.smokefreePoly);
@@ -624,7 +619,7 @@ app.map = (function(w,d, $, _){
       };
     }); 
 
-    //HOLLY - toggle excise tax GEOJSON
+    //toggle excise tax layer
     $tx.change(function(){
       if ($tx.is(':checked')) {
         el.featureGroupTax.addLayer(el.taxPoly);
@@ -635,7 +630,7 @@ app.map = (function(w,d, $, _){
       };
     }); 
 
-    //HOLLY - toggle youth smoking GEOJSON
+    //toggle youth smoking layer
     $ys.change(function(){
       if ($ys.is(':checked')) {
         el.featureGroupYouth.addLayer(el.youthPoly);
@@ -646,7 +641,7 @@ app.map = (function(w,d, $, _){
       };
     }); 
 
-    //HOLLY - toggle adult smoking GEOJSON
+    //toggle adult smoking layer
     $as.change(function(){
       if ($as.is(':checked')) {
         el.featureGroupAdult.addLayer(el.adultPoly);
@@ -659,12 +654,11 @@ app.map = (function(w,d, $, _){
 
   }
   
-//HOLLLY - GEOCODING KEEP
   // geocode search box text and create a marker on the map
   var geocode = function(address) {
     // reference bounding box for DC to improve geocoder results: 40.678685,-73.942451,40.710247,-73.890266
     var bounds = new google.maps.LatLngBounds(
-          new google.maps.LatLng(38.788026,-77.218511), // sw - HOLLY CHANGE THIS TO US AFTER TESTINGS
+          new google.maps.LatLng(38.788026,-77.218511), // sw - CHANGE THIS TO US AFTER TESTINGS
           new google.maps.LatLng(39.014598,76.794164) // ne
           );    
       el.geocoder.geocode({ 'address': address, 'bounds' : bounds }, function(results, status) {
@@ -702,8 +696,6 @@ app.map = (function(w,d, $, _){
     });
   }
 
-
-//HOLLY RESEARCH LEGENDS
 //  function to render choropleth legends
   var renderLegend = function(data) {
     if (data === null) { 
@@ -728,7 +720,7 @@ app.map = (function(w,d, $, _){
     });
   }
 
-//HOLLY - THIS IS FOR LEGEND CSS - ADJUST FOR CHOROPLETH
+//CSS - ADJUST FOR CHOROPLETH
   // data passed to renderLegend();
   // to do: generate this dynamically from cartocss
   el.legendData = {
@@ -861,110 +853,7 @@ app.map = (function(w,d, $, _){
           label : "10 - 0"
         }
       ]
-    },
-    // availFAR : {
-    //   title : "Available FAR",
-    //   items : [
-    //     {
-    //       color : "#BD0026",
-    //       label : "3.3 - 4"        
-    //     },
-    //     {
-    //       color : "#F03B20",
-    //       label : "2.5 - 3.2"
-    //     },
-    //     {
-    //       color : "#FD8D3C",
-    //       label : "1.7 - 2.4"
-    //     },
-    //     {
-    //       color: "#FECC5C",
-    //       label : "0.9 - 1.6"
-    //     },
-    //     {
-    //       color : "#FFFFB2",
-    //       label : "0 - 0.8"
-    //     }
-    //   ]
-    // },
-    // yearBuilt : {
-    //   title : "Year Built",
-    //   items : [
-    //   {
-    //     color : "#7a0177",
-    //     label : "2005-2014"
-    //   },
-    //   {
-    //     color : "#ae017e",
-    //     label : "2001-2004"
-    //   },
-    //   {
-    //     color : "#dd3497",
-    //     label : "1991-2000"
-    //   },
-    //   {
-    //     color : "#f768a1;",
-    //     label : "1974-1990"
-    //   },
-    //   {
-    //     color : "#fa9fb5",
-    //     label : "1934-1973"
-    //   },
-    //   {
-    //     color : "#fcc5c0",
-    //     label : "1901-1933"
-    //   },
-    //   {
-    //     color : "#feebe2",
-    //     label : "1800-1900"
-    //   },                                    
-    //   ]
-    // },
-    // landuse: {
-    //   title: "Land Use",
-    //   items: [
-    //   {
-    //     color: "#A6CEE3",
-    //     label: "Multi-Family Walkup"
-    //   },
-    //   {
-    //     color: "#1F78B4",
-    //     label: "1 & 2 Family Bldgs"
-    //   },
-    //   {
-    //     color: "#B2DF8A",
-    //     label: "Mixed Resid & Comm"
-    //   },
-    //   {
-    //     color: "#33A02C",
-    //     label: "Parking Facilities"
-    //   },
-    //   {
-    //     color: "#FB9A99",
-    //     label: "Vacant Land"
-    //   },
-    //   {
-    //     color: "#E31A1C",
-    //     label: "Commerical & Office"
-    //   },
-    //   {
-    //     color: "#FDBF6F",
-    //     label: "Industrial & Mfg"
-    //   },
-    //   {
-    //     color: "#FF7F00",
-    //     label: "Public Facil & Instns"
-    //   },
-    //   {
-    //     color: "#6A3D9A;",
-    //     label: "Open Space & Rec"
-    //   },
-    //   {
-    //     color: "#CAB2D6",
-    //     label: "N/A"
-    //   },                                                        
-    //   ]
-    // }    
+    },  
   };
 
   // get it all going!
