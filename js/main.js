@@ -53,7 +53,7 @@ app.map = (function(w,d, $, _){
   // reference cartocss styles from mapStyles.js
   el.styles = app.mapStyles;
   // url to cartodb FDA Violations map viz json
-  el.cdbURL = "https://legacy.cartodb.com/api/v2/viz/3fe5ca92-0315-11e6-801b-0e31c9be1b51/viz.json";
+  el.cdbURL = "https://nyumhealth.cartodb.com/api/v2/viz/aaeb36ab-b9e0-4f6d-a0a6-05a81f34d8ce/viz.json";
 
   // queries for warning violatiions - sent to cartodb when layer buttons clicked
   el.sql = {
