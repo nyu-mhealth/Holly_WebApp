@@ -53,12 +53,13 @@ app.map = (function(w,d, $, _){
   // reference cartocss styles from mapStyles.js
   el.styles = app.mapStyles;
   // url to cartodb FDA Violations map viz json
-  el.cdbURL = "https://nyumhealth.cartodb.com/api/v2/viz/aaeb36ab-b9e0-4f6d-a0a6-05a81f34d8ce/viz.json";
+  el.cdbURL = "https://nyumhealth.cartodb.com/api/v2/viz/60ea08aa-2cde-11e6-babe-0e3ff518bd15/viz.json";
+  
 
   // queries for warning violatiions - sent to cartodb when layer buttons clicked
   el.sql = {
-    warningLetters : "SELECT * FROM allwarnings_dc_nc_va WHERE decisiontype = 'Warning Letter'",
-    civilPenalties : "SELECT * FROM allwarnings_dc_nc_va WHERE decisiontype = 'Civil Money Penalty'",
+    warningLetters : "SELECT * FROM geocode_fda_warnings WHERE decisiontype = 'Warning Letter'",
+    civilPenalties : "SELECT * FROM geocode_fda_warnings WHERE decisiontype = 'Civil Money Penalty'",
     synarRates: "SELECT * FROM synar_states",
     fdaContracts: "SELECT * FROM fda_state_contracts",
     smokefreeLaws: "SELECT * FROM smokefree_indoor_laws",
