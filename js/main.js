@@ -85,10 +85,10 @@ app.map = (function(w,d, $, _){
   var initMap = function() {
     // map paramaters to pass to Leaflet
     var params = {
-      center : [35.816408,-78.638223], //Raleigh
+      center : [39.828398,-98.579544], //center of U.S.
       //minZoom : 14,
       //maxZoom : 19,
-      zoom : 6,
+      zoom : 5,
       //maxBounds : L.latLngBounds([40.675496,-73.957987],[40.714216,-73.877306]), 
       zoomControl : false,
       infoControl: false,
